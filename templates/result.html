@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+
+{% if messages %}
+    <ul class="messages alert-{{ message.tags }}">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+  <h2 class="h2">Result</h2><hr> <h4 class="h4">URL: <a href="{{ data.URL }}"> {{ data.URL }}</a></h4>
+            <a href="{% url 're-try' %}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Try another
+        </a>
+  <div class="container-fluid">
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">{{data.word_1}}</li>
+    <li class="list-group-item">{{data.word_2}}</li>
+    <li class="list-group-item">{{data.word_3}}</li>
+    <li class="list-group-item">{{data.word_4}}</li>
+    <li class="list-group-item">{{data.word_5}}</li>
+    <li class="list-group-item">{{data.word_6}}</li>
+    <li class="list-group-item">{{data.word_7}}</li>
+    <li class="list-group-item">{{data.word_8}}</li>
+    <li class="list-group-item">{{data.word_9}}</li>
+    <li class="list-group-item">{{data.word_10}}</li>
+
+</ul>
+  </div>
+</div>
+{% endblock %}
+
+
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#<div class="container mt-5 pt-5">#}
+{#{% if messages %}#}
+{#<ul class="messages alert-{{ message.tags }}">#}
+{#    {% for message in messages %}#}
+{#    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{#{% endif %}#}
+{##}
+{#<h1 class="h1">Result</h1>#}
+{#    <tbody>#}
+{#    {% for i in data %}#}
+{#          <table class="table table-hover">#}
+{#      <tr>#}
+{#        <td>{{i}}</td>#}
+{#      </tr>#}
+{#    </tbody>#}
+{#  </table>#}
+{#    {% endfor %}#}
+{##}
+{#</div>#}
+{#{% endblock %}#}
+{#{% block content %}#}
